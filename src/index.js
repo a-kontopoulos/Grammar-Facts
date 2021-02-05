@@ -12,7 +12,6 @@ for(const type in grammar) {
   facts.push(<div
     key = {type}
     className = 'grammar'
-    alt = {type}
     ariaLabel = {type}
     role = "button"
     onClick = {displayFact}>
@@ -23,7 +22,7 @@ for(const type in grammar) {
 }
 
 function displayFact(e) {
-  const selectedType = e.target.alt;
+  const selectedType = e.target.innerHTML;
   const grammarInfo = grammar[selectedType];
   const optionIndex = Math.floor(Math.random() * grammarInfo.facts.length);
   const funFact = grammarInfo.facts[optionIndex];
